@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hello_world'
+    'apps.hello_world'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'personal_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [personal-website-pralab1/personal_website/templates],
+        'DIRS': ["personal_website/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
