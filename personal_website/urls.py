@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+ROOT_API_URL = 'api/'
+API_VERSION = 'v1/'
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(f'{ROOT_API_URL}{API_VERSION}', include('apps.rest_api.urls')),
     path('first-app/', include('apps.hello_world.urls')),
     path('portfolio/', include('apps.portfolio.urls')),
     path('blog/', include('apps.blog.urls'))
