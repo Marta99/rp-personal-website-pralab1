@@ -2,7 +2,7 @@ from rest_framework import serializers
 from . import models
 
 
-class PostSerializer(serializers.ModelSerializer):
+class PostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Post
         fields = '__all__'
@@ -11,6 +11,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 class CategorySerializer(serializers.ModelSerializer):
     posts = PostSerializer(read_only=True, many=True)
+
     class Meta:
         model = models.Category
         fields = '__all__'
